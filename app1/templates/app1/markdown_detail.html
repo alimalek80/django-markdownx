@@ -1,0 +1,23 @@
+<!-- markdown_detail.html -->
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app1/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.formatted_markdown|safe }}</p>
+
+    <a href="{% url 'markdown-update' object.pk %}" class="btn btn-primary">Edit</a>
+    <a href="{% url 'markdown-list' %}" class="btn btn-secondary">Back to List</a>
+</div>
+</body>
+</html>

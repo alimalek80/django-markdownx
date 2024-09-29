@@ -1,0 +1,15 @@
+<!-- markdown_list.html -->
+<div class="container">
+    <h1>Markdown Examples List</h1>
+    <ul>
+        {% for example in markdown_example %}
+            <li>
+                <a href="{{ example.get_absolute_url }}">{{ example.title }}</a>
+            </li>
+        {% empty %}
+            <li>No markdown examples available.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'markdown-create' %}" class="btn btn-primary">Create New Markdown Example</a>
+</div>

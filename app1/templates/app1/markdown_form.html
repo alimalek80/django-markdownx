@@ -1,0 +1,12 @@
+<!-- markdown_form.html -->
+<div class="container">
+    <h1>{{ view.object.pk|yesno:"Update Markdown Example,Create Markdown Example" }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
+
+    <a href="{% url 'markdown-list' %}" class="btn btn-secondary">Back to List</a>
+</div>
